@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "3b8c0ce1-970a-4ca9-998b-2a4433fbf505",
+		"name": "Electricity Gird Forecast API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2388852"
+	},
+	"item": [
+		{
+			"name": "List supported countries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/grid-forecast/v1/countries",
+					"protocol": "https",
+					"host": [
+						"se-exchange-uat-sandbox",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"ecostruxure",
+						"grid-forecast",
+						"v1",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List supported forecast providers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/grid-forecast/v1/providers",
+					"protocol": "https",
+					"host": [
+						"se-exchange-uat-sandbox",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"ecostruxure",
+						"grid-forecast",
+						"v1",
+						"providers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get hourly grid forecast",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/grid-forecast/v1/countries/:countryCode/forecasts?interval=hourly&providerName=Ecowatt",
+					"protocol": "https",
+					"host": [
+						"se-exchange-uat-sandbox",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"ecostruxure",
+						"grid-forecast",
+						"v1",
+						"countries",
+						":countryCode",
+						"forecasts"
+					],
+					"query": [
+						{
+							"key": "interval",
+							"value": "hourly"
+						},
+						{
+							"key": "providerName",
+							"value": "Ecowatt"
+						}
+					],
+					"variable": [
+						{
+							"key": "countryCode",
+							"value": "FR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get daily grid forecast",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/grid-forecast/v1/countries/:countryCode/forecasts?providerName=Ecowatt&interval=daily",
+					"protocol": "https",
+					"host": [
+						"se-exchange-uat-sandbox",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"ecostruxure",
+						"grid-forecast",
+						"v1",
+						"countries",
+						":countryCode",
+						"forecasts"
+					],
+					"query": [
+						{
+							"key": "providerName",
+							"value": "Ecowatt"
+						},
+						{
+							"key": "interval",
+							"value": "daily"
+						}
+					],
+					"variable": [
+						{
+							"key": "countryCode",
+							"value": "FR"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "xxxxxxxxxx",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	}
+}

@@ -23,12 +23,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/grid-forecast/v1/countries",
+					"raw": "https://{{host}}/ecostruxure/grid-forecast/v1/countries",
 					"protocol": "https",
 					"host": [
-						"se-exchange-uat-sandbox",
-						"apigee",
-						"net"
+						"{{host}}"
 					],
 					"path": [
 						"ecostruxure",
@@ -57,12 +55,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/grid-forecast/v1/providers",
+					"raw": "https://{{host}}/ecostruxure/grid-forecast/v1/providers",
 					"protocol": "https",
 					"host": [
-						"se-exchange-uat-sandbox",
-						"apigee",
-						"net"
+						"{{host}}"
 					],
 					"path": [
 						"ecostruxure",
@@ -91,12 +87,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/grid-forecast/v1/countries/:countryCode/forecasts?interval=hourly&providerName=Ecowatt",
+					"raw": "https://{{host}}/ecostruxure/grid-forecast/v1/countries/:countryCode/forecasts?interval=hourly&providerName=Ecowatt",
 					"protocol": "https",
 					"host": [
-						"se-exchange-uat-sandbox",
-						"apigee",
-						"net"
+						"{{host}}"
 					],
 					"path": [
 						"ecostruxure",
@@ -133,9 +127,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -145,12 +137,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://se-exchange-uat-sandbox.apigee.net/ecostruxure/grid-forecast/v1/countries/:countryCode/forecasts?providerName=Ecowatt&interval=daily",
+					"raw": "https://{{host}}/ecostruxure/grid-forecast/v1/countries/:countryCode/forecasts?providerName=Ecowatt&interval=daily",
 					"protocol": "https",
 					"host": [
-						"se-exchange-uat-sandbox",
-						"apigee",
-						"net"
+						"{{host}}"
 					],
 					"path": [
 						"ecostruxure",
@@ -186,7 +176,7 @@
 		"apikey": [
 			{
 				"key": "value",
-				"value": "xxxxxxxxxx",
+				"value": "xxxxxxxxxxxxxxx",
 				"type": "string"
 			},
 			{
@@ -195,5 +185,32 @@
 				"type": "string"
 			}
 		]
-	}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "se-exchange-uat-sandbox.apigee.net",
+			"type": "string"
+		}
+	]
 }
